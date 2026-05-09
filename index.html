@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mountain Soul</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Cormorant+Garamond:wght@500;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#08111f;
+    color:white;
+    overflow-x:hidden;
+}
+
+/* HERO */
+
+.hero{
+    height:100vh;
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    overflow:hidden;
+
+    background:
+    linear-gradient(rgba(0,0,0,0.45),rgba(0,0,0,0.65)),
+    url('https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1974&auto=format&fit=crop');
+
+    background-size:cover;
+    background-position:center;
+}
+
+.overlay{
+    position:absolute;
+    inset:0;
+    backdrop-filter:blur(2px);
+}
+
+.hero-content{
+    position:relative;
+    z-index:5;
+    max-width:850px;
+    padding:20px;
+    animation:fadeUp 1.5s ease;
+}
+
+.hero h1{
+    font-size:clamp(3rem,8vw,7rem);
+    font-family:'Cormorant Garamond',serif;
+    letter-spacing:5px;
+    margin-bottom:20px;
+    text-shadow:0 0 20px rgba(255,255,255,0.25);
+}
+
+.hero p{
+    line-height:1.9;
+    font-size:1.1rem;
+    opacity:0.9;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:35px;
+    padding:15px 35px;
+    border-radius:999px;
+    text-decoration:none;
+    color:white;
+
+    background:rgba(255,255,255,0.08);
+    border:1px solid rgba(255,255,255,0.18);
+
+    backdrop-filter:blur(10px);
+
+    transition:0.4s;
+}
+
+.btn:hover{
+    transform:translateY(-5px) scale(1.03);
+    background:rgba(255,255,255,0.18);
+}
+
+/* STARS */
+
+.stars{
+    position:absolute;
+    width:100%;
+    height:100%;
+}
+
+.star{
+    position:absolute;
+    width:2px;
+    height:2px;
+    background:white;
+    border-radius:50%;
+    animation:twinkle 4s infinite;
+}
+
+@keyframes twinkle{
+    0%,100%{
+        opacity:0.2;
+    }
+    50%{
+        opacity:1;
+    }
+}
+
+/* SECTION */
+
+.section{
+    padding:100px 9%;
+}
+
+.section-title{
+    text-align:center;
+    font-size:3rem;
+    margin-bottom:60px;
+    font-family:'Cormorant Garamond',serif;
+}
+
+/* CARDS */
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:35px;
+}
+
+.card{
+    background:rgba(255,255,255,0.05);
+    border:1px solid rgba(255,255,255,0.08);
+    border-radius:25px;
+    overflow:hidden;
+
+    backdrop-filter:blur(12px);
+
+    transition:0.5s;
+
+    box-shadow:0 10px 35px rgba(0,0,0,0.3);
+}
+
+.card:hover{
+    transform:translateY(-12px) scale(1.02);
+}
+
+.card img{
+    width:100%;
+    height:250px;
+    object-fit:cover;
+}
+
+.card-content{
+    padding:22px;
+}
+
+.card-content h3{
+    margin-bottom:12px;
+    font-size:1.5rem;
+}
+
+.card-content p{
+    line-height:1.7;
+    opacity:0.85;
+}
+
+/* QUOTE */
+
+.quote-section{
+    padding:120px 10%;
+    text-align:center;
+
+    background:
+    linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.7)),
+    url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=1974&auto=format&fit=crop');
+
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
+}
+
+.quote{
+    font-size:clamp(2rem,4vw,3.5rem);
+    line-height:1.6;
+    font-family:'Cormorant Garamond',serif;
+}
+
+/* FOOTER */
+
+footer{
+    text-align:center;
+    padding:30px;
+    background:#060d18;
+    color:rgba(255,255,255,0.7);
+}
+
+/* ANIMATION */
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@media(max-width:768px){
+
+    .quote-section{
+        background-attachment:scroll;
+    }
+
+}
+
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="overlay"></div>
+
+<div class="stars">
+<div class="star" style="top:10%;left:20%"></div>
+<div class="star" style="top:15%;left:70%"></div>
+<div class="star" style="top:25%;left:40%"></div>
+<div class="star" style="top:60%;left:30%"></div>
+<div class="star" style="top:75%;left:65%"></div>
+<div class="star" style="top:45%;left:80%"></div>
+<div class="star" style="top:80%;left:10%"></div>
+<div class="star" style="top:35%;left:55%"></div>
+</div>
+
+<div class="hero-content">
+
+<h1>Mountain Soul</h1>
+
+<p>
+For the ones who feel alive in cold winds,
+foggy roads, snowy peaks, midnight skies,
+pine forests, peaceful lakes,
+and endless mountain sunsets.
+</p>
+
+<a href="#explore" class="btn">
+Explore The Vibe ✨
+</a>
+
+</div>
+</section>
+
+<!-- DESTINATIONS -->
+
+<section class="section" id="explore">
+
+<h2 class="section-title">
+Dream Destinations
+</h2>
+
+<div class="cards">
+
+<!-- UTTARAKHAND -->
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?q=80&w=1974&auto=format&fit=crop">
+
+<div class="card-content">
+<h3>Uttarakhand 🇮🇳</h3>
+
+<p>
+Foggy Himalayan roads, cozy chai stops,
+pine forests and peaceful hidden villages.
+</p>
+</div>
+
+</div>
+
+<!-- NEPAL -->
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=80&w=1974&auto=format&fit=crop">
+
+<div class="card-content">
+<h3>Nepal 🇳🇵</h3>
+
+<p>
+Prayer flags dancing in cold winds,
+massive snowy peaks and healing silence.
+</p>
+</div>
+
+</div>
+
+<!-- JAPAN -->
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?q=80&w=1974&auto=format&fit=crop">
+
+<div class="card-content">
+<h3>Japan 🇯🇵</h3>
+
+<p>
+Mount Fuji sunsets, cherry blossoms,
+anime-like lakes and dreamy cabin vibes.
+</p>
+</div>
+
+</div>
+
+<!-- SWITZERLAND -->
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=1974&auto=format&fit=crop">
+
+<div class="card-content">
+<h3>Switzerland 🇨🇭</h3>
+
+<p>
+Snowy alpine peaks, dreamy green valleys,
+peaceful lakes and fairytale mountain vibes.
+</p>
+</div>
+
+</div>
+
+</div>
+
+<!-- TIBET -->
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=1974&auto=format&fit=crop">
+
+<div class="card-content">
+<h3>Tibet & China 🏔️</h3>
+
+<p>
+Huge landscapes, crystal lakes,
+dramatic mountains and peaceful energy.
+</p>
+</div>
+
+</div>
+
+<!-- DREAMY MOUNTAIN -->
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1974&auto=format&fit=crop">
+
+<div class="card-content">
+<h3>Dreamy Mountain Escape 🌌</h3>
+
+<p>
+Clouds floating through giant peaks,
+cold winds and peaceful midnight silence.
+</p>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<!-- QUOTE -->
+
+<section class="quote-section">
+
+<div class="quote-overlay"></div>
+
+<div class="quote-container">
+
+<div class="quote-stars">
+<div class="qstar" style="top:10%;left:20%"></div>
+<div class="qstar" style="top:30%;left:70%"></div>
+<div class="qstar" style="top:70%;left:40%"></div>
+<div class="qstar" style="top:50%;left:85%"></div>
+<div class="qstar" style="top:80%;left:15%"></div>
+</div>
+
+<div class="quote-content">
+
+<h2>Mountain Dreams 🌌</h2>
+
+<p class="quote">
+“The mountains are calling,
+and somewhere deep inside,
+your soul is already halfway there.”
+</p>
+
+<p class="quote-small">
+Cold winds. Silent nights. Endless skies.
+Some places don’t just exist —
+they heal you.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<style>
+
+.quote-section{
+    position:relative;
+    padding:140px 10%;
+    overflow:hidden;
+
+    background-image:
+    linear-gradient(rgba(3,8,20,0.45), rgba(3,8,20,0.82)),
+    url('https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=1974&q=80');
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+}
+
+.quote-overlay{
+    position:absolute;
+    inset:0;
+    backdrop-filter:blur(3px);
+}
+
+.quote-container{
+    position:relative;
+    z-index:5;
+    text-align:center;
+}
+
+.quote-content h2{
+    font-size:3rem;
+    margin-bottom:25px;
+    font-family:'Cormorant Garamond',serif;
+    letter-spacing:3px;
+    text-shadow:0 0 18px rgba(255,255,255,0.15);
+    color:white;
+}
+
+.quote{
+    font-size:clamp(2rem,4vw,3.5rem);
+    line-height:1.8;
+    font-family:'Cormorant Garamond',serif;
+    max-width:900px;
+    margin:auto;
+    text-shadow:0 0 20px rgba(255,255,255,0.15);
+    color:white;
+}
+
+.quote-small{
+    margin-top:35px;
+    opacity:0.85;
+    font-size:1rem;
+    letter-spacing:1px;
+    color:white;
+}
+
+.quote-stars{
+    position:absolute;
+    inset:0;
+}
+
+.qstar{
+    position:absolute;
+    width:3px;
+    height:3px;
+    background:white;
+    border-radius:50%;
+    animation:twinkle 4s infinite;
+}
+
+@keyframes twinkle{
+    0%,100%{
+        opacity:0.2;
+    }
+    50%{
+        opacity:1;
+    }
+}
+
+</style>
+
+<!-- FOOTER -->
+
+<footer>
+Made with 🌙 for mountain lovers.
+</footer>
+
+<<!-- SNOW CONTAINER -->
+<div class="snow-container"></div>
+
+<style>
+.snow-container{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:9999;
+    overflow:hidden;
+}
+
+.snowflake{
+    position:absolute;
+    top:-10px;
+    color:white;
+    font-size:14px;
+    animation:snowfall linear infinite;
+    opacity:0.8;
+}
+
+@keyframes snowfall{
+    0%{
+        transform:translateY(-10vh) translateX(0);
+        opacity:0;
+    }
+    10%{ opacity:1; }
+    100%{
+        transform:translateY(110vh) translateX(30px);
+        opacity:0;
+    }
+}
+</style>
+
+<script>
+window.onload = function () {
+    const container = document.querySelector('.snow-container');
+
+    for (let i = 0; i < 80; i++) {
+        const snow = document.createElement('div');
+        snow.classList.add('snowflake');
+        snow.innerHTML = '❄';
+
+        snow.style.left = Math.random() * 100 + "vw";
+        snow.style.animationDuration = (Math.random() * 5 + 5) + "s";
+        snow.style.animationDelay = Math.random() * 5 + "s";
+        snow.style.fontSize = (Math.random() * 10 + 10) + "px";
+
+        container.appendChild(snow);
+    }
+};
+</script>
+
+</body>
+</html>
